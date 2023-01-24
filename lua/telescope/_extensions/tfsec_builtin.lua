@@ -12,7 +12,7 @@ M.tfsec = function(opts)
 	opts = opts or {}
 
 	local exec_tfsec = function()
-		local handle = io.popen("tfsec -f json | jq -c")
+		local handle = io.popen("tfsec -f json --no-module-downloads --ignore-hcl-errors | jq -c")
 		if handle ~= nil then
 			local tfsec_results = handle:read("*a")
 			handle:close()
