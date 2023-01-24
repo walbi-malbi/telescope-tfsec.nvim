@@ -100,7 +100,9 @@ M.tfsec = function(opts)
 							-- .. "'\nstatus: '"
 							-- .. entry.status
 							.. "'\nresource: '"
+							.. '"'
 							.. entry.resource
+							.. '"'
 							.. "'\nlocation: '"
 							.. "'\n  filename: '"
 							.. entry.location.filename
