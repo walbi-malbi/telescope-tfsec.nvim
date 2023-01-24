@@ -42,7 +42,7 @@ M.tfsec = function(opts)
 
 	pickers
 		.new(opts, {
-			prompt_title = "test prompt title",
+			prompt_title = "Search",
 			finder = finders.new_table({
 				results = exec_tfsec().results,
 				entry_maker = function(entry)
