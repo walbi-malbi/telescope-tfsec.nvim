@@ -2,7 +2,7 @@
 
 An extension for the telescope.nvim to search tfsec results.
 
-[![asciicast](https://asciinema.org/a/553878.svg)](https://asciinema.org/a/553878)
+[![asciicast](https://asciinema.org/a/553885.svg)](https://asciinema.org/a/553885)
 
 ## Get Started
 
