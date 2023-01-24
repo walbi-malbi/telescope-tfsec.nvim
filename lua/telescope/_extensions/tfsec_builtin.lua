@@ -25,6 +25,7 @@ M.tfsec = function(opts)
 	local displayer = entry_display.create({
 		separator = " ",
 		items = {
+			{ width = 10 },
 			{ width = 40 },
 			{ width = 60 },
 			{ remaining = true },
@@ -33,7 +34,8 @@ M.tfsec = function(opts)
 
 	local make_display = function(entry)
 		return displayer({
-			entry.severity .. " " .. entry.resource,
+			entry.severity,
+			entry.resource,
 			entry.long_id,
 		})
 	end
