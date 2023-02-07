@@ -21,6 +21,7 @@ use({
 
 - [tfsec](https://github.com/aquasecurity/tfsec)
 - [bat](https://github.com/sharkdp/bat)
+- [jq](https://stedolan.github.io/jq)
 
 ## Usage
 
