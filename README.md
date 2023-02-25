@@ -21,8 +21,8 @@ use({
 
 |Keymap|Description|
 |:-|:-|
-|<C-i>| insert ignore|
-|<C-y>| copy url |
+|\<C-i\>| insert ignore|
+|\<C-y\>| copy url |
 
 ## Require
 
