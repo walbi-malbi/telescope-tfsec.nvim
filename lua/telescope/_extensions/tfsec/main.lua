@@ -5,10 +5,11 @@ local entry_display = require("telescope.pickers.entry_display")
 local previewers = require("telescope.previewers")
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
+local tfsec_actions = require("telescope._extensions.tfsec.actions")
 
 local M = {}
 
-M.tfsec = function(opts)
+M.main = function(opts)
 	opts = opts or {}
 
 	local exec_tfsec = function()
@@ -116,7 +117,7 @@ M.tfsec = function(opts)
 					}
 				end,
 			}),
-			attach_mappings = function(prompt_bufnr)
+			attach_mappings = function(prompt_bufnr, map)
 				actions.select_default:replace(function()
 					local entry = action_state.get_selected_entry()
 					actions.close(prompt_bufnr)
@@ -151,6 +152,24 @@ M.tfsec = function(opts)
 
 					vim.fn.setreg("*", entry.links[1])
 				end)
+				actions.select_tab:replace(function()
+					local entry = action_state.get_selected_entry()
+					actions.close(prompt_bufnr)
+
+					vim.cmd("tabnew")
+					local bufnr = vim.uri_to_bufnr(vim.uri_from_fname(entry.location.filename))
+					local win = vim.api.nvim_get_current_win()
+					vim.api.nvim_win_set_buf(win, bufnr)
+					vim.api.nvim_win_set_cursor(win, { entry.location.start_line, 0 })
+
+					vim.fn.setreg("*", entry.links[1])
+				end)
+
+				map("i", "<C-i>", tfsec_actions.insert_ignore)
+				map("n", "<C-i>", tfsec_actions.insert_ignore)
+				map("i", "<C-y>", tfsec_actions.yank_url)
+				map("n", "<C-y>", tfsec_actions.yank_url)
+
 				return true
 			end,
 		})
