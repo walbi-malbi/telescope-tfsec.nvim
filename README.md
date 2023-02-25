@@ -17,6 +17,13 @@ use({
 })
 ```
 
+## Mappings
+
+|Keymap|Description|
+|:-|:-|
+|<C-i>| insert ignore|
+|<C-y>| copy url |
+
 ## Require
 
 - [tfsec](https://github.com/aquasecurity/tfsec)
