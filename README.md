@@ -6,6 +6,17 @@ An extension for the telescope.nvim to search tfsec results.
 
 ## Get Started
 
+Install with lazy
+
+```lua
+{
+	"walbi-malbi/telescope-tfsec.nvim",
+	config = function()
+		require("telescope").load_extension("tfsec")
+	end,
+},
+```
+
 Install with packer
 
 ```lua
